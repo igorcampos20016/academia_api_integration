@@ -27,8 +27,8 @@ export default class NavbarMenu extends React.Component {
     }
     render() {
         return (
-            <Navbar bg="light" expand="lg">
-                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="navMenu">
+            <Navbar bg="light" expand="lg" classname="espaco">
+                <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Container>
                         <Navbar.Brand href="#home">Resilia-Academy</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

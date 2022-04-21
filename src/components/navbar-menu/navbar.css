@@ -1,7 +1,12 @@
 /* css do navbar menu */
+/* .nav {
+    margin: 0 !important;
+    padding: 0 !important;
+} */
+
 .navbar {
     width: 100% !important;
     height: 75px !important;
-    padding-bottom: 0px !important;
+    padding-top: 0px !important;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1) !important;
 }
