@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const FormWraper = styled.form`
+export const FormWraper = styled.div`
 
     display: grid;
     padding: 10px;

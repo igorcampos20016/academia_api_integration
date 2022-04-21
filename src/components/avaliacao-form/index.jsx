@@ -26,7 +26,8 @@ export const AvaliacaoForm = () => {
     
 
     function HandleChange(e) { 
-        setAvalState({ [e.target.name]: e.target.value })
+        setAvalState({ ...avalFormState, [e.target.name]: e.target.value })
+        console.log( e.target.value)
     }
 
     function ObjectIDs() { 
@@ -38,7 +39,14 @@ export const AvaliacaoForm = () => {
         return Object.values(rest)
     }
 
-    function CreateInputs(inputId, label, inputValue = 0) { 
+    /** This function does not modify the original array */
+    function removeData(keys = [''], data) { 
+        let newData = {...data}
+        keys.forEach(el => delete newData[el]);
+        return newData
+    }
+
+    function CreateInputs(key, inputId, label, inputValue = {}) { 
         return (
             <>
 
@@ -50,17 +58,17 @@ export const AvaliacaoForm = () => {
         )
     }
 
+    function HandleClick (e) {
+        console.log(avalFormState)
+    }
     return (
         <>
             <FormWraper >
 
                 {
-                    ObjectIDs().map((value, index) => {
-                        
-                        return CreateInputs(value, fieldNameList[index])
-                    })
+                    ObjectIDs().map((value, index) => CreateInputs(index, value, fieldNameList[index],  avalFormState[value] ))
                 }
-                <Button>Salvar</Button>
+                <Button onClick={HandleClick}>Salvar</Button>
             </FormWraper>
         </>
     )
