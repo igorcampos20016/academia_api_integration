@@ -11,7 +11,13 @@ function Login() {
 		<div>
 				<p>Usuario: </p>
 				<Input/>
+				<p>Senha: </p>
+				<Input/>
 				<Button>Salvar</Button>
+
+				
+				
+
 		</div>
 					
 
