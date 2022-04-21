@@ -13,7 +13,6 @@ export const Input = styled.input`
     
     &:focus{
         outline: none;
-        border-style: none;
-        border-bottom: 1px;
+        
     }
 `
