@@ -1,3 +1,4 @@
+import moment from "moment"
 export class AvaliacaoTemplate{ 
     constructor(avalInfo = {
          id: null,
@@ -5,6 +6,7 @@ export class AvaliacaoTemplate{
          peso: 0.0, 
          massaMuscular: 0.0, 
          taxaGordura:0.0,
+         ombros: 0.0,
          tricipal: 0.0,
          peitoral: 0.0,
          cintura: 0.0,
@@ -16,13 +18,17 @@ export class AvaliacaoTemplate{
          panturrilhaE: 0.0,
          panturrilhaD: 0.0,
          abdomem: 0.0,
-         gluteo: 0.0
+         gluteo: 0.0,
+         user_id: 0,
+         createdAt: 0.0,
+         updatedAt: 0.0
     }) { 
         this.id            = this.formatID(avalInfo.id),
         this.altura        = this.format(avalInfo.altura),
         this.peso          = this.format(avalInfo.peso),
         this.massaMuscular = this.format(avalInfo.massaMuscular),
         this.taxaGordura   = this.format(avalInfo.taxaGordura),
+        this.ombros        = this.format(avalInfo.ombros),
         this.tricipal      = this.format(avalInfo.tricipal),
         this.peitoral      = this.format(avalInfo.peitoral),
         this.cintura       = this.format(avalInfo.cintura),
@@ -34,16 +40,16 @@ export class AvaliacaoTemplate{
         this.panturrilhaE  = this.format(avalInfo.panturrilhaE),
         this.panturrilhaD  = this.format(avalInfo.panturrilhaD),
         this.abdomem       = this.format(avalInfo.abdomem),
-        this.gluteo        = this.format(avalInfo.gluteo)
+        this.gluteo        = this.format(avalInfo.gluteo),
+        this.user_id       = this.formatID(avalInfo.user_id)
+        this.createdAt     = this.dateFormat(avalInfo.createdAt)
+        this.updatedAt     = this.setUpdatedTime()
     }
-    /*
-    this function make sure to format the input into a valido sql decimal (2,3)
-    */
+    
     format(val = 0.0) {
         if(typeof val != `number`) return 0.00
         if(val < 0) return 0.00
         if(val > Number.MAX_SAFE_INTEGER) { 
-            // console.warn('The number ' + val + ' exceeds the max safe value')
             return 999.99
         }  
         return this.clamp(parseFloat(val.toFixed(2)), 0.00, 999.99)
@@ -52,10 +58,15 @@ export class AvaliacaoTemplate{
         if(typeof val != `number`) return null
         if(val < 1) return null
         if(val > Number.MAX_SAFE_INTEGER) { 
-            // console.warn('The number ' + val + ' exceeds the max safe value')
             return null
         } 
         return parseInt(val)
+    }
+    setUpdatedTime() {
+        return moment().format()
+    }
+    dateFormat(date) { 
+        return moment().format(date)
     }
 
     clamp(value, min, max) { 
