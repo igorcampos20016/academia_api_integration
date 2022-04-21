@@ -30,11 +30,11 @@ export const AvaliacaoForm = () => {
     }
 
     function ObjectIDs() { 
-        const {id, ...rest} = new AvaliacaoTemplate()
+        const {id, createdAt, updatedAt, ...rest} = new AvaliacaoTemplate()
         return Object.keys(rest)
     }
     function ObjectValues(value = new AvaliacaoTemplate()) { 
-        const {id, ...rest} = new AvaliacaoTemplate(value)
+        const {id, createdAt, updatedAt, ...rest} = new AvaliacaoTemplate(value)
         return Object.values(rest)
     }
 
