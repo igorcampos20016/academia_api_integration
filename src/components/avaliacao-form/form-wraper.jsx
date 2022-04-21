@@ -7,4 +7,5 @@ export const FormWraper = styled.div`
     padding: 10px;
     grid-template-columns: auto auto;
     row-gap: 10px;
+
 `

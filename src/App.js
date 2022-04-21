@@ -1,13 +1,15 @@
 import './App.css';
 import { AvaliacaoForm } from './components/avaliacao-form';
-import Login from './components/pages/login';
+import NavbarMenu from './components/navbar-menu/navbar.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      {/* Header */}
+
+      <NavbarMenu />
+
       <main>
-        <Login></Login>
         <AvaliacaoForm ></AvaliacaoForm>
         
       </main>
