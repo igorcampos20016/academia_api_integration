@@ -34,9 +34,10 @@ export default class NavbarMenu extends React.Component {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link href="#features">HOME</Nav.Link>
-                                <Nav.Link href="#pricing">CONTATOS</Nav.Link>
-                                <Nav.Link eventKey={2} href="#deets">SOBRE</Nav.Link>
+                                <Nav.Link href="#">HOME</Nav.Link>
+                                <Nav.Link href="#">CONTATOS</Nav.Link>
+                                <Nav.Link href="#">SOBRE</Nav.Link>
+                                <Nav.Link href="#">LOGIN</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
