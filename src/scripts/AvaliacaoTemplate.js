@@ -49,12 +49,24 @@ export class AvaliacaoTemplate{
         this.createdAt     = avalInfo.createdAt
         this.updatedAt     = avalInfo.updatedAt
     }
+
+    setValue(key, value) {
+        console.log(this[key])
+        this[key] = this.format(value)
+    }
     /*
     this function make sure to format the input into a valido sql decimal (2,3)
     */
     format(val = 0.0) {
+        
+        if(typeof val === 'string') {
+            val = parseFloat(val)
+            console.log(val)
+        }
+        
+        if(isNaN(val)) return 0.00
         if(typeof val != `number`) return 0.00
-        if(val < 0) return 0.00
+        if(val < 0 || val == null) return 0.00
         if(val > Number.MAX_SAFE_INTEGER) { 
             // console.warn('The number ' + val + ' exceeds the max safe value')
             return 999.99

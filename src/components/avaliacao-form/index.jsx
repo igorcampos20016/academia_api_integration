@@ -23,19 +23,21 @@ export const AvaliacaoForm = () => {
       return () => {
         // second
       }
-    }, [])
+    }, [avalFormState])
     
-    function HandleChange(e) { 
-        setAvalState({ ...avalFormState, [e.target.name]: e.target.value })
-        console.log( e.target.value)
+    function HandleChange(e) {
+        const newState = new AvaliacaoTemplate({...avalFormState})
+        newState.setValue(e.target.name, (e.target.value))
+        console.log(newState)
+        setAvalState({ ...newState })
     }
 
     function ObjectIDs() { 
-        const {id, createdAt, updatedAt, ...rest} = new AvaliacaoTemplate()
+        const {id, createdAt, updatedAt, user_id, ...rest} = new AvaliacaoTemplate()
         return Object.keys(rest)
     }
     function ObjectValues(value = new AvaliacaoTemplate()) { 
-        const {id, createdAt, updatedAt, ...rest} = new AvaliacaoTemplate(value)
+        const {id, createdAt, updatedAt, user_id ,...rest} = new AvaliacaoTemplate(value)
         return Object.values(rest)
     }
 
@@ -50,7 +52,7 @@ export const AvaliacaoForm = () => {
         return (
             <Label key={key} htmlfor={inputId}>
                 {label}
-                <Input onChange={HandleChange} type="number" name={inputId} id={inputId} value={inputValue} placeholder={label}/>
+                <Input onChange={HandleChange} type="number" name={inputId} id={inputId} value={avalFormState[inputId]} placeholder={label}/>
             </Label>
         )
     }
