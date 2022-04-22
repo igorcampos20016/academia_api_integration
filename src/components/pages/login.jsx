@@ -11,7 +11,7 @@ function Login() {
 		
 		<div>
 				<Label>
-					<p>Usuario: </p>
+					<p>Email: </p>
 					<Input/>
 					<p>Senha: </p>
 					<Input/>
