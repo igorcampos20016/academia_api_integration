@@ -3,7 +3,7 @@
   height: 100px;
   background-image: linear-gradient(
     90deg,
-    rgb(240,240,240)
+    grey,
    
   );
   color: black;
