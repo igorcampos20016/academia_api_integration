@@ -3,17 +3,8 @@
   height: 100px;
   background-image: linear-gradient(
     90deg,
-    black,
-    white,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    purple,
-    pink,
-    white,
-    black
+    grey,
+    
   );
   color: black;
   font-size: 30px;
