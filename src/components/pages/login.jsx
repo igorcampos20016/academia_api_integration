@@ -4,15 +4,12 @@ import {Input} from "../styled-components/input/input.jsx";
 import {Label} from "../styled-components/label/label.jsx"
 import styles from "./login.module.css";
 
-
 function Login() {
     
     return(
 
-		
 		<div className={styles.principal}>
 
-			
 			<div className={styles.propagada}>
 
 			<img className={styles.imagem} src="https://i.pinimg.com/originals/ae/bb/95/aebb950866dfc6c867f80a80cc27f370.jpg" alt="Casal Saúdavel"/>		
@@ -44,9 +41,6 @@ function Login() {
 			</div>
 
 		</div>
-					
-
-
     );
 }
 
